@@ -1,11 +1,13 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const api_key = process.env.API_KEY;
-var path = require('path')
+
+const path = require('path')
 const express = require('express')
+const fetch = require('node-fetch')
 const mockAPIResponse = require('./mockAPI.js')
-var bodyParser = require('body-parser')
-var cors = require('cors')
+const bodyParser = require ('body-parser');
+const cors = require('cors')
 
 var json = {
     'title': 'test json response',
@@ -21,7 +23,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }))
-
 app.use(express.static('dist'))
 
 console.log(JSON.stringify(mockAPIResponse))
@@ -33,6 +34,11 @@ app.get('/', function (req, res) {
 app.get('/test', function (req, res) {
     res.json(mockAPIResponse);
 })
+
+// Setup Server
+const port = 8081;
+// Spin up the server
+const server = app.listen(port, () => console.log(`Running on localhost: ${port}`));
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
