@@ -47,25 +47,4 @@ app.listen(8081, function () {
 
 // POST route
 app.post('/inputfield', async (req, res) => {
-    const article = req.body.url;
-    const articleResults = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${key}&url=${article}&lang=en`, { method: 'POST' });
-    try {
-        const data = await articleResults.json();
-        console.log(data)
-        res.send(data);
-    } catch (error) {
-        console.log("error",error)
-    }
-});
-
-app.post('/inputfield', async(req, res) => {
-    console.log('req.body ===+>', req.body)
-    const res = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${api_key}&url=${req.body.formText}&lang=en`);
-    try {
-        const data = await res.json();
-        console.log(data);
-        res.send(data);
-      }catch (error) {
-      console.log("error", error);
-      }
-});
+    const response = fetch("https://api.meaningcloud.com/lang-4.0/identification",
