@@ -23,7 +23,7 @@ function handleSubmit(event) {
     
     })
     .then(function(data) {
-        document.getElementById('results').innerHTML = data.message
+        document.getElementsByClassName('results').innerHTML = data.message
     })
 }
 

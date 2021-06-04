@@ -9,7 +9,7 @@ const mockAPIResponse = require('./mockAPI.js')
 const bodyParser = require ('body-parser');
 const cors = require('cors')
 
-var json = {
+let json = {
     'title': 'test json response',
     'message': 'this is a message',
     'time': 'now'
@@ -47,4 +47,15 @@ app.listen(8081, function () {
 
 // POST route
 app.post('/inputfield', async (req, res) => {
-    const response = fetch("https://api.meaningcloud.com/lang-4.0/identification",
+    const response  = await fetch("https://api.meaningcloud.com/sentiment-2.1" + apiKey + "&lang=en",{
+    method: 'POST'   
+    ,})
+    try{
+        const data = res.json();
+        console.log(data)
+        return data;
+      }  catch(error) {
+        console.log("error", error);
+        // handle the error
+    }
+    });
