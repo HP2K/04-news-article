@@ -59,5 +59,5 @@ function handleSubmit(event) {
 
 
 
-
-export { handleSubmit }}
+}
+export { handleSubmit }
