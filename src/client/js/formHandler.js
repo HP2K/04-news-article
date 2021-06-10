@@ -21,7 +21,7 @@ const postResults = async (url = "http://localhost:8081/test", data = {}) => {
     const response  = await fetch ("http://localhost:8081/test", {
     method: 'POST',
     credentials: 'same-origin',
-    mode: 'cors'
+    mode: 'cors',
     headers: {
         "Content-Type": "application/json",
     },
