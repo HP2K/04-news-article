@@ -11,6 +11,15 @@ console.log(checkForName);
 
 alert("I EXIST")
 
+
+
+window.addEventListener("DOMContentLoaded", (event) => {
+	console.log("DOM fully loaded and parsed");
+	//Add submit event listener to the form
+	document.querySelector("form").addEventListener("submit", handleSubmit);
+});
+
+
 export {
     checkForName,
     handleSubmit
