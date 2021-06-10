@@ -2,6 +2,20 @@
 const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1";
 const api_key = process.env.API_KEY;
 
+const getSentimentAnalysis = async (userURL) => {
+	const res = await fetch(`${baseURL}?key=${API_KEY}&lang=en&url=${userURL}`);
+	try {
+		const data = await res.json();
+		console.log("data: ", data);
+		return data;
+	} catch (error) {
+		console.log("error", error);
+	}
+};
+// Setup a POST route where you'll call getSentimentAnalysis method
+
+
+
 const postResults = async (url = "http://localhost:8081/test", data = {}) => {
     console.log("::: Form Submitted :::", data);
     const response  = await fetch ("http://localhost:8081/test", {
@@ -21,6 +35,8 @@ const postResults = async (url = "http://localhost:8081/test", data = {}) => {
     }
  };
 
+
+ 
 function handleSubmit(event) {
     event.preventDefault()
     // check what text was put into the form field
@@ -39,5 +55,9 @@ function handleSubmit(event) {
 }else {
     alert("Enter correct url")
 }
+
+
+
+
 
 export { handleSubmit }}

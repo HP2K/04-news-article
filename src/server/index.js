@@ -1,8 +1,10 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const api_key = process.env.API_KEY;
 
-const path = require('path')
+const APIKey = process.env.API_KEY;
+console.log("MeaningCloud APPI key =" , APIKey)
+
+let path = require('path')
 const express = require('express')
 const fetch = require('node-fetch')
 const mockAPIResponse = require('./mockAPI.js')
