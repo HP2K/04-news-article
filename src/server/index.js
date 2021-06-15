@@ -35,7 +35,7 @@ const port = 8083;
 // const server = app.listen(port, () => console.log(`Running on localhost: ${port}`));
 // designates what port the app will listen to for incoming requests
 app.listen(port, function () {
-    console.log('Example app listening on port 8081!')
+    console.log('Example app listening on port 8083!')
 })
 // POST route
 app.post('/inputfield', async (req, res) => {

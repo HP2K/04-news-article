@@ -37,7 +37,7 @@ function handleSubmit(event) {
     if (checkForName(formText)) {
         postResults(formText)
             .then(res => {
-                document.getElementById('score_tag').innerHTML = `score_tag: $(res.score_tag)`;
+                document.getElementById('score_tag').innerHTML = `score_tag: ${res.score_tag}`;
                 document.getElementById('model').innerHTML = `Model: ${res.model}`;
                 document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
                 document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
