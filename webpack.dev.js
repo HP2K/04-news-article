@@ -33,6 +33,7 @@ module.exports = {
             filename: "./index.html",
         }),
         new WorkboxPlugin.GenerateSW(),
+        new MiniCssExtractPlugin({filename: '[name].css'}),
         new CleanWebpackPlugin({
             // Simulate the removal of files
             dry: true,
